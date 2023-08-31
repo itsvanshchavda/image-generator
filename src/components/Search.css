@@ -1,0 +1,16 @@
+
+
+body {
+    max-width: 1200px;
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 2rem;
+}
+
+h1 {
+    color: blue;
+}
