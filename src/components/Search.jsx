@@ -38,14 +38,6 @@ function Search({ onSearch }) {
   };
 
   return <>
-    <div>
-      <ul className='list'>
-        <li>Home</li>
-        <li>About</li>
-        <li>API</li>
-        <li>GitHub</li>
-      </ul>
-    </div>
     <div style={containerStyle}>
       <div style={searchBarStyle}>
         <Form.Control type="text" placeholder="Search..." style={inputStyle} onChange={(e) => setQuery(e.target.value)} />

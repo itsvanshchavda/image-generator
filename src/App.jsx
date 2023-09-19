@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
-import Search from './components/Search'; 
-import ImageList from './components/Imagelist'; 
-import HomeImages from './components/HomeImages';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Nav from './components/Nav';
+import Search from './components/Search';
+import ImageList from './components/ImageList';
+import About from './components/About';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (query) => {
-    // Update the search query state when the search button is clicked
     setSearchQuery(query);
   };
 
   return (
-    <div>
-      <Search onSearch={handleSearch} />
-      <ImageList searchQuery={searchQuery} />
-      <HomeImages />
-    </div>
+    <Router>
+      <div>
+        <Nav />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div>
+                <Search onSearch={handleSearch} />
+                <ImageList searchQuery={searchQuery} />
+              </div>
+            }
+          />
+
+          <Route
+            path="/about"
+            element={<About />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
